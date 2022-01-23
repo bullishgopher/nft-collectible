@@ -3,7 +3,7 @@ import './App.css';
 import contract from './contracts/NFTCollectible.json';
 import { ethers } from 'ethers';
 
-const contractAddress = "0x355638a4eCcb777794257f22f50c289d4189F245";
+const contractAddress = "0xC685D3Db0Dac17679ac2610d84622d0558b4cc19";
 const abi = contract.abi;
 
 function App() {
@@ -57,7 +57,7 @@ function App() {
         const nftContract = new ethers.Contract(contractAddress, abi, signer);
 
         console.log("Initialize payment");
-        let nftTxn = await nftContract.mintNFTs(1, { value: ethers.utils.parseEther("0.01") });
+        let nftTxn = await nftContract.mintNFTs(1, { value: ethers.utils.parseEther("0.001") });
 
         console.log("Mining... please wait");
         await nftTxn.wait();

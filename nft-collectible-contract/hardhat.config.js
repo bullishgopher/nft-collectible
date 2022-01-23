@@ -2,7 +2,7 @@ require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
 require('dotenv').config();
 
-const { API_URL, PRIVATE_KEY, ETHERSCAN_API, POLYGON_URL } = process.env;
+const { INFURA_PROJECT_ID, ACCOUNT_PRIVATE_KEY, ETHERSCAN_API, POLYGON_URL } = process.env;
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -25,12 +25,12 @@ module.exports = {
   defaultNetwork: "rinkeby",
   networks: {
     rinkeby: {
-      url: API_URL,
-      accounts: [PRIVATE_KEY]
+      url: `https://rinkeby.infura.io/v3/${INFURA_PROJECT_ID}`,
+      accounts: [`0x${ACCOUNT_PRIVATE_KEY}`]
     },
     mumbai: {
       url: POLYGON_URL,
-      accounts: [PRIVATE_KEY]
+      accounts: [ACCOUNT_PRIVATE_KEY]
     }
   },
   etherscan: {

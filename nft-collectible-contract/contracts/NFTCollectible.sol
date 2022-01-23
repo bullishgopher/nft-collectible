@@ -13,12 +13,12 @@ contract NFTCollectible is ERC721Enumerable, Ownable {
     Counters.Counter private _tokenIds;
     
     uint public constant MAX_SUPPLY = 100;
-    uint public constant PRICE = 0.01 ether;
+    uint public constant PRICE = 0.001 ether;
     uint public constant MAX_PER_MINT = 5;
     
     string public baseTokenURI;
     
-    constructor(string memory baseURI) ERC721("NFT Collectible", "NFTC") {
+    constructor(string memory baseURI) ERC721("NFT Collectible", "HNGBU") {
         setBaseURI(baseURI);
     }
     

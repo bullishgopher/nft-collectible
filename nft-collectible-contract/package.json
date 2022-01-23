@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "compile": "npx hardhat compile",
+    "deploy:testnet": "npx hardhat run --network rinkeby scripts/run.js",
+    "deploy:mainnet": "npx hardhat run --network mainnet scripts/run.js",
+    "verify:testnet": "npx hardhat verify --network rinkeby 0xC685D3Db0Dac17679ac2610d84622d0558b4cc19 ipfs://QmZbWNKJPAjxXuNFSEaksCJVd1M6DaKQViJBYPK2BdpDEP",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
